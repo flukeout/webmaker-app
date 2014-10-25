@@ -4,8 +4,10 @@ module.exports = {
     id: 'navigationBar',
     template: require('./index.html'),
     created : function(){
-      var confirmAttribute = this.$el.getAttribute("confirmLabel");
-      this.confirmLabel = i18n.get(confirmAttribute) || i18n.get("Done");
+        var confirmAttribute = this.$el.getAttribute("confirmlabel");
+        this.confirmLabel = confirmAttribute || i18n.get("Done");
+        var cancelAttribute = this.$el.getAttribute("cancellabel");
+        this.cancelLabel = cancelAttribute || i18n.get("Cancel");
     },
     data: {
         goBack: function (e) {
